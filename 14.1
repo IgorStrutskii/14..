@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dz13</title>
+    <script>
+      // Функція для видалення символів з рядка
+      function removeCharacters(str, characters) {
+        for (let i = 0; i < characters.length; i++) {
+          const regex = new RegExp(characters[i], "g");
+          str = str.replace(regex, "");
+        }
+
+        return str;
+      }
+
+      function performOperations() {
+        const inputString = "hello world";
+        const charactersToRemove = ["l", "d"];
+        const modifiedString = removeCharacters(
+          inputString,
+          charactersToRemove
+        );
+        console.log(modifiedString); // Виводимо результат в консоль
+        document.getElementById("result").textContent = modifiedString; // Замінюємо попередній результат на новий
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Операції з масивом</h2>
+    <button onclick="performOperations()">Виконати операції</button>
+    <p>Результат: <span id="result"></span></p>
+  </body>
+</html>
