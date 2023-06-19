@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dz14.3</title>
+    <script>
+      function doMath(x, znak, y) {
+        let result;
+
+        switch (znak) {
+          case "+":
+            result = x + y;
+            break;
+          case "-":
+            result = x - y;
+            break;
+          case "*":
+            result = x * y;
+            break;
+          case "/":
+            result = x / y;
+            break;
+          case "%":
+            result = x % y;
+            break;
+          case "^":
+            result = Math.pow(x, y);
+            break;
+          default:
+            result = NaN;
+        }
+
+        return result;
+      }
+
+      function performOperations() {
+        const x = parseFloat(prompt("Введіть перше число:"));
+        const y = parseFloat(prompt("Введіть друге число:"));
+        const operation = prompt("Введіть операцію (+, -, *, /, %, ^):");
+
+        const mathResult = doMath(x, operation, y);
+        document.getElementById("result").textContent = mathResult;
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Операції з масивом</h2>
+    <button onclick="performOperations()">Виконати операції</button>
+    <p>Результат: <span id="result"></span></p>
+  </body>
+</html>
