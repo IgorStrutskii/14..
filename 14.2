@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dz13</title>
+    <script>
+      function fillArray() {
+        const rows = parseInt(prompt("Введіть кількість рядків:"));
+        const columns = parseInt(prompt("Введіть кількість стовпців:"));
+
+        const array = [];
+
+        for (let i = 0; i < rows; i++) {
+          const row = [];
+
+          for (let j = 0; j < columns; j++) {
+            const value = prompt(`Введіть значення для елемента [${i}][${j}]:`);
+            row.push(value);
+          }
+
+          array.push(row);
+        }
+
+        return array;
+      }
+
+      function performOperations() {
+        const userArray = fillArray();
+        console.log(userArray);
+        document.getElementById("result").textContent =
+          JSON.stringify(userArray);
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Операції з масивом</h2>
+    <button onclick="performOperations()">Виконати операції</button>
+    <p>Результат: <span id="result"></span></p>
+  </body>
+</html>
