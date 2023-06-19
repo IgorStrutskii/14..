@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dz14</title>
+    <script>
+      function calculateAverage(arr) {
+        let sum = 0;
+        let count = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+          if (typeof arr[i] === "number") {
+            sum += arr[i];
+            count++;
+          }
+        }
+
+        if (count === 0) {
+          return 0; // Якщо числових елементів немає, повертаємо 0
+        }
+
+        return sum / count; // Повертаємо середнє арифметичне
+      }
+
+      function performOperations() {
+        const array = [1, "two", 3, "four", 5];
+        const average = calculateAverage(array);
+        console.log(average); // Виводимо результат в консоль
+        document.getElementById("result").textContent = average; // Виводимо результат на сторінку
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Операції з масивом</h2>
+    <button onclick="performOperations()">Виконати операції</button>
+    <p>Результат: <span id="result"></span></p>
+  </body>
+</html>
